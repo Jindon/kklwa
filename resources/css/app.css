@@ -1,3 +1,37 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.min-h-main-content {
+    min-height: 65vh;
+}
+
+[x-cloak] { display: none; }
+
+.vanilla-calendar {
+    @apply shadow-none;
+}
+
+.vanilla-calendar .vanilla-calendar-week {
+    @apply bg-green-700 flex flex-wrap;
+}
+
+.vanilla-calendar .vanilla-calendar-btn {
+    @apply hidden;
+}
+
+.vanilla-calendar .vanilla-calendar-week span {
+    @apply py-2;
+}
+
+.vanilla-calendar .vanilla-calendar-date--today {
+    @apply bg-green-500 text-green-100;
+}
+
+.vanilla-calendar .vanilla-calendar-date--selected {
+    @apply bg-white text-gray-600;
+}
+
+.vanilla-calendar .vanilla-calendar-date--today.vanilla-calendar-date--selected {
+    @apply bg-green-500 text-green-100;
+}
