@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Livewire\Admin\ManageBeneficiaries;
+use App\Http\Livewire\Admin\ManageStaffs;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,17 +44,11 @@ Route::get('/contact', function () {
 Route::name('admin.')->middleware(['auth'])
     ->group(function () {
 
-    Route::get('/dashboard', function() {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/admin/staffs', function() {
-        return view('admin.staffs');
-    })->name('staffs');
+    Route::get('/admin/staffs', ManageStaffs::class)->name('staffs');
 
-    Route::get('/admin/beneficiaries', function() {
-        return view('admin.beneficiaries');
-    })->name('beneficiaries');
+    Route::get('/admin/beneficiaries', ManageBeneficiaries::class)->name('beneficiaries');
 
 });
 

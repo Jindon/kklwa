@@ -2,8 +2,8 @@
 
     {{-- Beneficiaries Section --}}
     <div class="bg-white">
-        <div class="max-w-6xl mx-auto px-3 md:px-6 py-12 md:py-24 space-y-6 md:space-y-12">
-            <div class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 items-start md:items-center">
+        <div class="max-w-6xl px-3 py-12 mx-auto space-y-6 md:px-6 md:py-24 md:space-y-12">
+            <div class="flex flex-col items-start justify-between space-y-4 md:flex-row md:space-y-0 md:items-center">
                 <x-section-title
                     title="Staffs"
                     description="Our staff members"
@@ -24,6 +24,15 @@
                         @forelse([1,2,3,4,5,6,7,8,9,10] as $index)
                             <x-table.row class="{{ $index % 2 !== 0 ? 'bg-green-100' : '' }}">
                                 <x-table.cell><img src="/images/staff.jpg" alt="staff" class="w-20 h-auto"></x-table.cell>
+                                {{-- <x-table.cell>
+                                    <div class="flex items-center justify-center w-20 h-20 overflow-hidden bg-gray-100 rounded-lg">
+                                        @if ($staff->photo)
+                                            <img src="{{ $staff->photoUrl }}" alt="Staff photo" class="w-auto h-20">
+                                        @else
+                                            <div class="text-gray-300"><x-heroicon-o-user class="w-10 h-10"/></div>
+                                        @endif
+                                    </div>
+                                </x-table.cell> --}}
                                 <x-table.cell>Khagembam Surchand Singh</x-table.cell>
                                 <x-table.cell>Kumbi Bazar Ward no. 7</x-table.cell>
                                 <x-table.cell>Graduate</x-table.cell>
