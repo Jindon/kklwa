@@ -74,4 +74,8 @@
             <x-button.primary class="px-4 py-2" wire:click="savePassword">{{ __('Update password') }}</x-button.primary>
         </div>
     </div>
+
+    <div class="py-6 mt-6 border-t">
+        <livewire:admin.manage-contact />
+    </div>
 </div>

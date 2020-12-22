@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Website\GalleryController;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\PagesController;
 use App\Http\Livewire\Admin\ManageBeneficiaries;
 use App\Http\Livewire\Admin\ManageGallery;
 use App\Http\Livewire\Admin\ManagePageContent;
@@ -23,23 +23,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('website.home');
 
-Route::get('/about', function () {
-    return view('website.about');
-})->name('website.about');
+Route::get('/about',[PagesController::class, 'about'])->name('website.about');
 
-Route::get('/beneficiaries', function () {
-    return view('website.beneficiaries');
-})->name('website.beneficiaries');
+Route::get('/beneficiaries', [PagesController::class, 'beneficiaries'])->name('website.beneficiaries');
 
-Route::get('/staffs', function () {
-    return view('website.staffs');
-})->name('website.staffs');
+Route::get('/staffs', [PagesController::class, 'staffs'])->name('website.staffs');
 
-Route::get('/gallery', GalleryController::class)->name('website.gallery');
+Route::get('/gallery', [PagesController::class, 'gallery'])->name('website.gallery');
 
-Route::get('/contact', function () {
-    return view('website.contact');
-})->name('website.contact');
+Route::get('/contact', [PagesController::class, 'contact'])->name('website.contact');
 
 // Admin routes
 Route::name('admin.')->middleware(['auth'])

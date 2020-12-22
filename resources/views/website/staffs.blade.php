@@ -21,10 +21,9 @@
                         <x-table.heading>Date of appointment</x-table.heading>
                     </x-slot>
                     <x-slot name="body">
-                        @forelse([1,2,3,4,5,6,7,8,9,10] as $index)
-                            <x-table.row class="{{ $index % 2 !== 0 ? 'bg-green-100' : '' }}">
-                                <x-table.cell><img src="/images/staff.jpg" alt="staff" class="w-20 h-auto"></x-table.cell>
-                                {{-- <x-table.cell>
+                        @forelse($staffs as $index=>$staff)
+                            <x-table.row class="{{ $index % 2 !== 0 ? 'bg-white' : '' }}" wire:loading.class.delay="opacity-50" wire:key='staff-{{ $staff->id }}'>
+                                <x-table.cell>
                                     <div class="flex items-center justify-center w-20 h-20 overflow-hidden bg-gray-100 rounded-lg">
                                         @if ($staff->photo)
                                             <img src="{{ $staff->photoUrl }}" alt="Staff photo" class="w-auto h-20">
@@ -32,24 +31,28 @@
                                             <div class="text-gray-300"><x-heroicon-o-user class="w-10 h-10"/></div>
                                         @endif
                                     </div>
-                                </x-table.cell> --}}
-                                <x-table.cell>Khagembam Surchand Singh</x-table.cell>
-                                <x-table.cell>Kumbi Bazar Ward no. 7</x-table.cell>
-                                <x-table.cell>Graduate</x-table.cell>
-                                <x-table.cell>Superintendent</x-table.cell>
-                                <x-table.cell>02-04-2020</x-table.cell>
+                                </x-table.cell>
+                                <x-table.cell class="font-bold">{{ $staff->name }}</x-table.cell>
+                                <x-table.cell>{{ $staff->address }}</x-table.cell>
+                                <x-table.cell>{{ $staff->edu_qualification }}</x-table.cell>
+                                <x-table.cell>{{ $staff->designation }}</x-table.cell>
+                                <x-table.cell>{{ $staff->DoaDate() }}</x-table.cell>
                             </x-table.row>
                         @empty
                             <x-table.row>
-                                <x-table.cell colspan="8">
+                                <x-table.cell colspan="7">
                                     <div class="flex justify-center w-full py-10 text-gray-500">
-                                        No staff found..
+                                        No staffs found..
                                     </div>
                                 </x-table.cell>
                             </x-table.row>
                         @endforelse
                     </x-slot>
                 </x-table>
+
+                <div class="mt-4">
+                    {{ $staffs->links() }}
+                </div>
             </div>
         </div>
     </div>

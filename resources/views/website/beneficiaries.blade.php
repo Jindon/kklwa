@@ -2,8 +2,8 @@
 
     {{-- Beneficiaries Section --}}
     <div id="staffs" class="bg-white">
-        <div class="max-w-6xl mx-auto px-3 md:px-6 py-12 md:py-24 space-y-6 md:space-y-12">
-            <div class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 items-start md:items-center">
+        <div class="max-w-6xl px-3 py-12 mx-auto space-y-6 md:px-6 md:py-24 md:space-y-12">
+            <div class="flex flex-col items-start justify-between space-y-4 md:flex-row md:space-y-0 md:items-center">
                 <x-section-title
                     title="Beneficiaries"
                     description="Our beneficiaries for Nov, 2020"
@@ -31,22 +31,22 @@
                         <x-table.heading>D.O.E</x-table.heading>
                     </x-slot>
                     <x-slot name="body">
-                        @forelse([1,2,3,4,5,6,7,8,9,10] as $index)
-                            <x-table.row class="{{ $index % 2 !== 0 ? 'bg-green-100' : '' }}">
-                                <x-table.cell class="font-bold">Haobijam Jati Devi</x-table.cell>
-                                <x-table.cell>(L) H.Kul Singh</x-table.cell>
-                                <x-table.cell>01-03-1958</x-table.cell>
-                                <x-table.cell>Female</x-table.cell>
-                                <x-table.cell>OBC</x-table.cell>
-                                <x-table.cell>Taobungkhok</x-table.cell>
-                                <x-table.cell>ILT</x-table.cell>
-                                <x-table.cell>02-04-2020</x-table.cell>
+                        @forelse($beneficiaries as $index=>$beneficiary)
+                            <x-table.row class="{{ $index % 2 !== 0 ? 'bg-white' : '' }}" wire:loading.class.delay="opacity-50" wire:key='beneficiary-{{ $beneficiary->id }}'>
+                                <x-table.cell class="font-bold">{{ $beneficiary->name }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->relation_name }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->DobDate() }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->gender }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->category }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->address }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->edu_qualification }}</x-table.cell>
+                                <x-table.cell>{{ $beneficiary->DoeDate() }}</x-table.cell>
                             </x-table.row>
                         @empty
                             <x-table.row>
-                                <x-table.cell colspan="8">
+                                <x-table.cell colspan="9">
                                     <div class="flex justify-center w-full py-10 text-gray-500">
-                                        No beneficiaries found..
+                                        No beneifiaries found..
                                     </div>
                                 </x-table.cell>
                             </x-table.row>

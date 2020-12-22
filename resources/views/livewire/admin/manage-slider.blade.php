@@ -8,9 +8,6 @@
         </div>
 
         <div class="flex justify-end w-full space-x-3">
-            {{-- <div class="flex-1">
-                <x-input.text type="text" wire:model="search" placeholder="Search photos.."/>
-            </div> --}}
             <div class="">
                 <x-button.primary wire:click="openForm">
                     <div class="flex items-center space-x-1">

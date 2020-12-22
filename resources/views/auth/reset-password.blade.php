@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-logo />
             </a>
         </x-slot>
 
@@ -19,25 +19,25 @@
             <div>
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                <x-input.email id="email" class="block w-full mt-1" type="email" name="email" :value="old('email', $request->email)" required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <label for="password" class="block font-medium text-sm text-gray-700">
+                <label for="password" class="block text-sm font-medium text-gray-700">
                     {{ __('Password') }}
                 </label>
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+                <x-input.password id="password" class="block w-full mt-1" type="password" name="password" required />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <label for="password_confirmation" class="block font-medium text-sm text-gray-700">
+                <label for="password_confirmation" class="block text-sm font-medium text-gray-700">
                     {{ __('Confirm Password') }}
                 </label>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
+                <x-input.password id="password_confirmation" class="block w-full mt-1"
                                     type="password"
                                     name="password_confirmation" required />
             </div>

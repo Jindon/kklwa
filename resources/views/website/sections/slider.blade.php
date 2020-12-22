@@ -1,9 +1,9 @@
 <div class="splide">
-    <div class="splide__track shadow-lg">
+    <div class="shadow-lg splide__track">
         <ul class="splide__list">
-            <li class="splide__slide"><img src="/images/slide1.jpg"></li>
-            <li class="splide__slide"><img src="/images/slide2.jpg"></li>
-            <li class="splide__slide"><img src="/images/slide3.jpg"></li>
+            @foreach($sliders as $slide)
+                <li class="splide__slide"><img src="{{ $slide->imageUrl }}"></li>
+            @endforeach
         </ul>
     </div>
 </div>
