@@ -91,6 +91,7 @@ class ManageBeneficiaries extends Component
         return view('livewire.admin.manage-beneficiaries', [
             'beneficiaries' => Beneficiary::query()
                                 ->when($this->search, fn($query, $search) => $query->where('name', 'like', '%'.$search.'%'))
+                                ->orderBy('created_at', 'DESC')
                                 ->paginate($this->perPage)
         ]);
     }

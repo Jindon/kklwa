@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Website\GalleryController;
+use App\Http\Controllers\Website\HomeController;
 use App\Http\Livewire\Admin\ManageBeneficiaries;
+use App\Http\Livewire\Admin\ManageGallery;
+use App\Http\Livewire\Admin\ManagePageContent;
 use App\Http\Livewire\Admin\ManageStaffs;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('website.home');
-})->name('website.home');
+Route::get('/', HomeController::class)->name('website.home');
 
 Route::get('/about', function () {
     return view('website.about');
@@ -32,9 +34,7 @@ Route::get('/staffs', function () {
     return view('website.staffs');
 })->name('website.staffs');
 
-Route::get('/gallery', function () {
-    return view('website.gallery');
-})->name('website.gallery');
+Route::get('/gallery', GalleryController::class)->name('website.gallery');
 
 Route::get('/contact', function () {
     return view('website.contact');
@@ -49,6 +49,10 @@ Route::name('admin.')->middleware(['auth'])
     Route::get('/admin/staffs', ManageStaffs::class)->name('staffs');
 
     Route::get('/admin/beneficiaries', ManageBeneficiaries::class)->name('beneficiaries');
+
+    Route::get('/admin/page-contents', ManagePageContent::class)->name('page-contents');
+
+    Route::get('/admin/gallery', ManageGallery::class)->name('gallery');
 
 });
 

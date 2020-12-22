@@ -18,7 +18,7 @@
 
 
         let pond = FilePond.create($refs.input, {
-            maxFileSize: '2MB'
+            maxFileSize: '{{ $attributes['max-flie'] ?? '2MB' }}'
         });
 
         this.addEventListener('pondReset', e => {

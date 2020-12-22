@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
         <link rel="stylesheet" href="{{ asset('css/vanilla-calendar-min.css') }}">
         <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+        <link href="https://unpkg.com/trix@1.3.1/dist/trix.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
@@ -50,8 +51,8 @@
                 <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">{{ __('Dashboard') }}</x-nav-link>
                 <x-nav-link href="{{ route('admin.staffs') }}" :active="request()->routeIs('admin.staffs')">{{ __('Staffs') }}</x-nav-link>
                 <x-nav-link href="{{ route('admin.beneficiaries') }}/" :active="request()->routeIs('admin.beneficiaries')">{{ __('Beneficiaries') }}</x-nav-link>
-                <x-nav-link href="{{ route('website.gallery') }}" :active="request()->routeIs('website.gallery')">{{ __('Gallery') }}</x-nav-link>
-                <x-nav-link href="{{ route('website.gallery') }}" :active="request()->routeIs('website.gallery')">{{ __('Page Content') }}</x-nav-link>
+                <x-nav-link href="{{ route('admin.gallery') }}" :active="request()->routeIs('admin.gallery')">{{ __('Gallery') }}</x-nav-link>
+                <x-nav-link href="{{ route('admin.page-contents') }}" :active="request()->routeIs('admin.page-contents')">{{ __('Page Content') }}</x-nav-link>
                 <x-nav-link href="{{ route('website.contact') }}" :active="request()->routeIs('website.contact')">{{ __('Settings') }}</x-nav-link>
             </div>
         </div>
@@ -71,6 +72,12 @@
         @livewireScripts
         <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
         <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+        <script src="https://unpkg.com/trix@1.3.1/dist/trix.js"></script>
+        <script>
+
+
+
+        </script>
         @stack('scripts')
     </body>
 </html>

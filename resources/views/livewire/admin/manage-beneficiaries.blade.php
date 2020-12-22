@@ -171,7 +171,7 @@
     <!-- Confirm delete modal -->
     <x-modal wire:model.defer="deleteConfirmation" max-width="md">
         <div class="flex items-center justify-between p-4">
-            <x-section-title title="{{ __('Delete beneficiary') }}"/>
+            <x-modal-title title="{{ __('Delete beneficiary') }}"/>
             <div>
                 <x-button.danger wire:click="cancelDelete"><x-heroicon-o-x class="w-4 h-4"/></x-button.danger>
             </div>

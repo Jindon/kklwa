@@ -42,6 +42,20 @@ return [
             'visibility' => 'public',
         ],
 
+        'gallery' => [
+            'driver' => 'local',
+            'root' => storage_path('app/gallery_photos'),
+            'url' => env('APP_URL').'/gallery_photos',
+            'visibility' => 'public',
+        ],
+
+        'uploads' => [
+            'driver' => 'local',
+            'root' => storage_path('app/uploads'),
+            'url' => env('APP_URL').'/uploads',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -75,6 +89,8 @@ return [
     'links' => [
         // public_path('storage') => storage_path('app/public'),
         public_path('staff') => storage_path('app/staff'),
+        public_path('gallery_photos') => storage_path('app/gallery_photos'),
+        public_path('uploads') => storage_path('app/uploads'),
     ],
 
 ];
