@@ -7,6 +7,7 @@ use App\Http\Livewire\Admin\ManageBeneficiaries;
 use App\Http\Livewire\Admin\ManageGallery;
 use App\Http\Livewire\Admin\ManagePageContent;
 use App\Http\Livewire\Admin\ManageStaffs;
+use App\Http\Livewire\Admin\Settings;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,8 @@ Route::name('admin.')->middleware(['auth'])
     Route::get('/admin/page-contents', ManagePageContent::class)->name('page-contents');
 
     Route::get('/admin/gallery', ManageGallery::class)->name('gallery');
+
+    Route::get('/admin/settings', Settings::class)->name('settings');
 
 });
 

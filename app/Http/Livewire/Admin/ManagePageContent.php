@@ -12,7 +12,6 @@ class ManagePageContent extends Component
 
     public $perPage = 10;
     public $about;
-    public $home = 'Home';
     public $photo = NULL;
     public $aboutContent = '';
 

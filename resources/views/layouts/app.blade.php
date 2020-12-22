@@ -53,7 +53,7 @@
                 <x-nav-link href="{{ route('admin.beneficiaries') }}/" :active="request()->routeIs('admin.beneficiaries')">{{ __('Beneficiaries') }}</x-nav-link>
                 <x-nav-link href="{{ route('admin.gallery') }}" :active="request()->routeIs('admin.gallery')">{{ __('Gallery') }}</x-nav-link>
                 <x-nav-link href="{{ route('admin.page-contents') }}" :active="request()->routeIs('admin.page-contents')">{{ __('Page Content') }}</x-nav-link>
-                <x-nav-link href="{{ route('website.contact') }}" :active="request()->routeIs('website.contact')">{{ __('Settings') }}</x-nav-link>
+                <x-nav-link href="{{ route('admin.settings') }}" :active="request()->routeIs('admin.settings')">{{ __('Settings') }}</x-nav-link>
             </div>
         </div>
 
