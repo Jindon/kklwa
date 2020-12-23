@@ -68,6 +68,8 @@
             {{ $slot }}
         </div>
 
+        <x-back-to-top />
+
         {{-- Footer --}}
         @include('layouts.footer')
 
