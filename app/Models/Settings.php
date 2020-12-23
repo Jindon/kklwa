@@ -14,6 +14,9 @@ class Settings extends Model
 
     public function getImageUrl()
     {
-        return $this->is_image ? Storage::disk('uploads')->url($this->value) : NULL;
+        if($this->is_image && Storage::disk('uploads')->exists($this->value)) {
+            return Storage::disk('uploads')->url($this->value);
+        }
+        return $this->key == 'logo' ? asset('images/logo.png') : NULL;
     }
 }
