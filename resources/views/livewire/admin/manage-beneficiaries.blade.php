@@ -38,8 +38,8 @@
                         <x-table.cell class="font-bold">{{ $beneficiary->name }}</x-table.cell>
                         <x-table.cell>{{ $beneficiary->relation_name }}</x-table.cell>
                         <x-table.cell>{{ $beneficiary->DobDate() }}</x-table.cell>
-                        <x-table.cell>{{ $beneficiary->gender }}</x-table.cell>
-                        <x-table.cell>{{ $beneficiary->category }}</x-table.cell>
+                        <x-table.cell>{{ App\Models\Beneficiary::GENDER[$beneficiary->gender] }}</x-table.cell>
+                        <x-table.cell>{{ App\Models\Beneficiary::CATEGORY[$beneficiary->category] }}</x-table.cell>
                         <x-table.cell>{{ $beneficiary->address }}</x-table.cell>
                         <x-table.cell>{{ $beneficiary->edu_qualification }}</x-table.cell>
                         <x-table.cell>{{ $beneficiary->DoeDate() }}</x-table.cell>

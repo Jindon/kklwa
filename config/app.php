@@ -57,6 +57,7 @@ return [
     'asset_url' => env('ASSET_URL', null),
 
     'map_embed_url' => env('MAP_EMBED_URL', null),
+    'filter_start_year' => env('FILTER_START_YEAR', 2000),
 
     /*
     |--------------------------------------------------------------------------

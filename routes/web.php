@@ -8,6 +8,7 @@ use App\Http\Livewire\Admin\ManageGallery;
 use App\Http\Livewire\Admin\ManagePageContent;
 use App\Http\Livewire\Admin\ManageStaffs;
 use App\Http\Livewire\Admin\Settings;
+use App\Http\Livewire\Website\Beneficiaries;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,7 @@ Route::get('/', HomeController::class)->name('website.home');
 
 Route::get('/about',[PagesController::class, 'about'])->name('website.about');
 
-Route::get('/beneficiaries', [PagesController::class, 'beneficiaries'])->name('website.beneficiaries');
+Route::get('/beneficiaries', Beneficiaries::class)->name('website.beneficiaries');
 
 Route::get('/staffs', [PagesController::class, 'staffs'])->name('website.staffs');
 

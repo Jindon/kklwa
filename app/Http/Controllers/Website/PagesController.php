@@ -26,13 +26,6 @@ class PagesController extends Controller
         ]);
     }
 
-    public function beneficiaries()
-    {
-        return view('website.beneficiaries', [
-            'beneficiaries' => Beneficiary::orderBy('created_at', 'DESC')->paginate(10),
-        ]);
-    }
-
     public function gallery()
     {
         $perPage = request()->perPage ?? 12;

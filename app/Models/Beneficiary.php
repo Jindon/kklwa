@@ -10,6 +10,19 @@ class Beneficiary extends Model
 {
     use HasFactory;
 
+    const CATEGORY = [
+        1 => 'General',
+        2 => 'OBC',
+        3 => 'SC',
+        4 => 'ST',
+    ];
+
+    const GENDER = [
+        1 => 'Male',
+        2 => 'Female',
+        3 => 'Other',
+    ];
+
     protected $guarded = [];
 
     public function setRelationAttribute($value)
