@@ -1,4 +1,4 @@
-<x-website-layout>
+<x-website-layout meta-title="About">
 
     <div class="bg-white">
         <div class="max-w-6xl px-3 py-12 mx-auto md:px-6 md:py-24">

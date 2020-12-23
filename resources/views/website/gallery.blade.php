@@ -1,4 +1,4 @@
-<x-website-layout>
+<x-website-layout meta-title="Gallery">
 
     {{-- Gallery section --}}
     <div x-data="{ selectedImage: null }">
@@ -33,6 +33,7 @@
             x-transition:leave-start="translate-y-0"
             x-transition:leave-end="-translate-y-full"
             class="fixed top-0 left-0 right-0 z-40 flex justify-center"
+            x-cloak
         >
             <div class="relative max-w-lg mt-12 bg-transparent" @click.away="selectedImage = null">
                 <img :src="selectedImage" alt="" class="rounded-lg">

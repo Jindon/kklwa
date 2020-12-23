@@ -39,6 +39,6 @@ class Beneficiaries extends Component
                                 ->when($this->month, fn($query, $month) => $query->whereMonth('doe', date("m", strtotime($month))))
                                 ->when($this->year, fn($query, $year) => $query->whereYear('doe', $year))
                                 ->paginate(10),
-        ])->layout('layouts.website');
+        ])->layout('layouts.website', ['metaTitle' => 'Beneficiaries']);
     }
 }

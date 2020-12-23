@@ -1,4 +1,4 @@
-<x-website-layout>
+<x-website-layout meta-title="Staffs">
 
     {{-- Beneficiaries Section --}}
     <div class="bg-white">
