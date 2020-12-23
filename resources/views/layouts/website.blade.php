@@ -4,6 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="description" content="Kumbi Khullakpam Leikai Women's Assoiciation.">
+        <meta name="keywords" content="ngo,kumbi,women's association,manipur ngo,manipur">
+        @if(config('app.env') == 'production')
+            <meta name="robots" content="index,follow"/>
+        @endif
+        <meta name="title" content="{{ config('app.name', 'Laravel') }}{{ $metaTitle ? ' - ' . $metaTitle : '' }}">
+        <meta name="url" content="{{ request()->fullUrl() }}">
+
         <link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
 
         <title>{{ config('app.name', 'Laravel') }}{{ $metaTitle ? ' - ' . $metaTitle : '' }}</title>
